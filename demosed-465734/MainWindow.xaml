@@ -1,0 +1,77 @@
+﻿<Window x:Class="demosed_465734.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:demosed_465734" xmlns:modelDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="400"
+        Background="Transparent" WindowStyle="None" Topmost="True" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
+
+    <Grid MouseDown="Grid_MouseDown">
+        <Border CornerRadius="20">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Red" Offset="0"/>
+                    <GradientStop Color="Blue" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <TextBlock Text="Войти в профиль"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0 50 0 0"
+                   Foreground="#fff"
+                   FontSize="25"/>
+        <TextBlock Text="X" Foreground="#fff"
+                   FontSize="30" FontWeight="Bold"
+                   Cursor="Hand" Margin="15" 
+                   MouseDown="TextBlock_MouseDown"/>
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0 70 0 0">
+            <DockPanel>
+                <TextBox Width="170" CaretBrush="White" 
+                         SelectionBrush="White" 
+                         Foreground="White" 
+                         BorderBrush="#89FFFFFF"
+                         Name="loginBox"/>
+                <modelDesign:PackIcon Kind="Login"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      Foreground="#fff"/>
+            </DockPanel>
+            <DockPanel Margin="0 20 0 0">
+                <PasswordBox Width="170" CaretBrush="White" 
+                             SelectionBrush="White" 
+                             Foreground="White" 
+                             BorderBrush="#89FFFFFF"
+                             Name="passBox"/>
+                <modelDesign:PackIcon Kind="Password"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      Foreground="#fff"/>
+            </DockPanel>
+            <DockPanel Margin="0 20 0 0">
+                <ComboBox Name="TypeBox" Width="180" Foreground="Black" BorderBrush="#89FFFFFF"
+                          HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+            </DockPanel>
+            <Button Margin="0 40 0 0"
+                    Name="enterLogin"
+                    Click="enterLogin_Click"
+                    Cursor="Hand">
+                <DockPanel>
+                    <TextBlock Text="Войти" 
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"/>
+                    <modelDesign:PackIcon Kind="Arrow"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" 
+                                          Margin="100 0 0 0"/>
+
+                </DockPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

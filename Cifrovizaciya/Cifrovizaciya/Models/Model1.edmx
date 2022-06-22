@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище IgishevDemo2022Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDMeropriyatia" Type="int" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDModer" Type="int" Nullable="false" />
+          <Property Name="IDGyri" Type="int" Nullable="false" />
+          <Property Name="IDClients" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Birthday" Type="date" />
+          <Property Name="IDCountry" Type="int" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Photo" Type="image" />
+          <Property Name="PhotoPath" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Name2" Type="nvarchar" MaxLength="150" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gyri">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Birthday" Type="date" />
+          <Property Name="IDCountry" Type="int" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDNapravleniay" Type="int" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Photo" Type="image" />
+          <Property Name="PhotoPath" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Meropriaytie">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Days" Type="int" />
+          <Property Name="IDCity" Type="int" />
+          <Property Name="Photo" Type="image" />
+          <Property Name="PhotoPath" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Moder">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Birthday" Type="date" />
+          <Property Name="IDCountry" Type="int" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDNapravleniya" Type="int" />
+          <Property Name="Meropriyatie" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Photo" Type="image" />
+          <Property Name="PhotoPath" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Napravlenie">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Organizatory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Birthday" Type="date" />
+          <Property Name="IDCountry" Type="int" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Photo" Type="image" />
+          <Property Name="PhotoPath" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Activity_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Activity">
+              <PropertyRef Name="IDClients" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Activity_gyri">
+          <End Role="gyri" Type="Self.gyri" Multiplicity="1" />
+          <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gyri">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Activity">
+              <PropertyRef Name="IDGyri" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Activity_Meropriaytie">
+          <End Role="Meropriaytie" Type="Self.Meropriaytie" Multiplicity="1" />
+          <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Meropriaytie">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Activity">
+              <PropertyRef Name="IDMeropriyatia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Activity_Moder">
+          <End Role="Moder" Type="Self.Moder" Multiplicity="1" />
+          <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Moder">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Activity">
+              <PropertyRef Name="IDModer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="IDCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gyri_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="gyri" Type="Self.gyri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="gyri">
+              <PropertyRef Name="IDCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gyri_Napravlenie">
+          <End Role="Napravlenie" Type="Self.Napravlenie" Multiplicity="0..1" />
+          <End Role="gyri" Type="Self.gyri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Napravlenie">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="gyri">
+              <PropertyRef Name="IDNapravleniay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Meropriaytie_City">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="Meropriaytie" Type="Self.Meropriaytie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Meropriaytie">
+              <PropertyRef Name="IDCity" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Moder_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="Moder" Type="Self.Moder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Moder">
+              <PropertyRef Name="IDCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Moder_Napravlenie">
+          <End Role="Napravlenie" Type="Self.Napravlenie" Multiplicity="0..1" />
+          <End Role="Moder" Type="Self.Moder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Napravlenie">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Moder">
+              <PropertyRef Name="IDNapravleniya" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organizatory_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="Organizatory" Type="Self.Organizatory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Organizatory">
+              <PropertyRef Name="IDCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище IgishevDemo2022ModelContainer">
+          <EntitySet Name="Activity" EntityType="Self.Activity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gyri" EntityType="Self.gyri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Meropriaytie" EntityType="Self.Meropriaytie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Moder" EntityType="Self.Moder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Napravlenie" EntityType="Self.Napravlenie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Organizatory" EntityType="Self.Organizatory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Activity_Clients" Association="Self.FK_Activity_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Activity" EntitySet="Activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Activity_gyri" Association="Self.FK_Activity_gyri">
+            <End Role="gyri" EntitySet="gyri" />
+            <End Role="Activity" EntitySet="Activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Activity_Meropriaytie" Association="Self.FK_Activity_Meropriaytie">
+            <End Role="Meropriaytie" EntitySet="Meropriaytie" />
+            <End Role="Activity" EntitySet="Activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Activity_Moder" Association="Self.FK_Activity_Moder">
+            <End Role="Moder" EntitySet="Moder" />
+            <End Role="Activity" EntitySet="Activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_Country" Association="Self.FK_Clients_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gyri_Country" Association="Self.FK_gyri_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="gyri" EntitySet="gyri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gyri_Napravlenie" Association="Self.FK_gyri_Napravlenie">
+            <End Role="Napravlenie" EntitySet="Napravlenie" />
+            <End Role="gyri" EntitySet="gyri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Meropriaytie_City" Association="Self.FK_Meropriaytie_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Meropriaytie" EntitySet="Meropriaytie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Moder_Country" Association="Self.FK_Moder_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Moder" EntitySet="Moder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Moder_Napravlenie" Association="Self.FK_Moder_Napravlenie">
+            <End Role="Napravlenie" EntitySet="Napravlenie" />
+            <End Role="Moder" EntitySet="Moder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organizatory_Country" Association="Self.FK_Organizatory_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Organizatory" EntitySet="Organizatory" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IgishevDemo2022Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDMeropriyatia" Type="Int32" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Precision="3" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDModer" Type="Int32" Nullable="false" />
+          <Property Name="IDGyri" Type="Int32" Nullable="false" />
+          <Property Name="IDClients" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_Activity_Clients" FromRole="Activity" ToRole="Clients" />
+          <NavigationProperty Name="gyri" Relationship="Self.FK_Activity_gyri" FromRole="Activity" ToRole="gyri" />
+          <NavigationProperty Name="Meropriaytie" Relationship="Self.FK_Activity_Meropriaytie" FromRole="Activity" ToRole="Meropriaytie" />
+          <NavigationProperty Name="Moder" Relationship="Self.FK_Activity_Moder" FromRole="Activity" ToRole="Moder" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Meropriaytie" Relationship="Self.FK_Meropriaytie_City" FromRole="City" ToRole="Meropriaytie" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="IDCountry" Type="Int32" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PhotoPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Activity" Relationship="Self.FK_Activity_Clients" FromRole="Clients" ToRole="Activity" />
+          <NavigationProperty Name="Country" Relationship="Self.FK_Clients_Country" FromRole="Clients" ToRole="Country" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Name2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_Clients_Country" FromRole="Country" ToRole="Clients" />
+          <NavigationProperty Name="gyri" Relationship="Self.FK_gyri_Country" FromRole="Country" ToRole="gyri" />
+          <NavigationProperty Name="Moder" Relationship="Self.FK_Moder_Country" FromRole="Country" ToRole="Moder" />
+          <NavigationProperty Name="Organizatory" Relationship="Self.FK_Organizatory_Country" FromRole="Country" ToRole="Organizatory" />
+        </EntityType>
+        <EntityType Name="gyri">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="IDCountry" Type="Int32" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDNapravleniay" Type="Int32" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PhotoPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Activity" Relationship="Self.FK_Activity_gyri" FromRole="gyri" ToRole="Activity" />
+          <NavigationProperty Name="Country" Relationship="Self.FK_gyri_Country" FromRole="gyri" ToRole="Country" />
+          <NavigationProperty Name="Napravlenie" Relationship="Self.FK_gyri_Napravlenie" FromRole="gyri" ToRole="Napravlenie" />
+        </EntityType>
+        <EntityType Name="Meropriaytie">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Days" Type="Int32" />
+          <Property Name="IDCity" Type="Int32" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PhotoPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Activity" Relationship="Self.FK_Activity_Meropriaytie" FromRole="Meropriaytie" ToRole="Activity" />
+          <NavigationProperty Name="City" Relationship="Self.FK_Meropriaytie_City" FromRole="Meropriaytie" ToRole="City" />
+        </EntityType>
+        <EntityType Name="Moder">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="IDCountry" Type="Int32" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDNapravleniya" Type="Int32" />
+          <Property Name="Meropriyatie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PhotoPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Activity" Relationship="Self.FK_Activity_Moder" FromRole="Moder" ToRole="Activity" />
+          <NavigationProperty Name="Country" Relationship="Self.FK_Moder_Country" FromRole="Moder" ToRole="Country" />
+          <NavigationProperty Name="Napravlenie" Relationship="Self.FK_Moder_Napravlenie" FromRole="Moder" ToRole="Napravlenie" />
+        </EntityType>
+        <EntityType Name="Napravlenie">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="gyri" Relationship="Self.FK_gyri_Napravlenie" FromRole="Napravlenie" ToRole="gyri" />
+          <NavigationProperty Name="Moder" Relationship="Self.FK_Moder_Napravlenie" FromRole="Napravlenie" ToRole="Moder" />
+        </EntityType>
+        <EntityType Name="Organizatory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="IDCountry" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PhotoPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Country" Relationship="Self.FK_Organizatory_Country" FromRole="Organizatory" ToRole="Country" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Activity_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Activity">
+              <PropertyRef Name="IDClients" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Activity_gyri">
+          <End Role="gyri" Type="Self.gyri" Multiplicity="1" />
+          <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gyri">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Activity">
+              <PropertyRef Name="IDGyri" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Activity_Meropriaytie">
+          <End Role="Meropriaytie" Type="Self.Meropriaytie" Multiplicity="1" />
+          <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Meropriaytie">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Activity">
+              <PropertyRef Name="IDMeropriyatia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Activity_Moder">
+          <End Role="Moder" Type="Self.Moder" Multiplicity="1" />
+          <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Moder">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Activity">
+              <PropertyRef Name="IDModer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Meropriaytie_City">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="Meropriaytie" Type="Self.Meropriaytie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Meropriaytie">
+              <PropertyRef Name="IDCity" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="IDCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gyri_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="gyri" Type="Self.gyri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="gyri">
+              <PropertyRef Name="IDCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Moder_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="Moder" Type="Self.Moder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Moder">
+              <PropertyRef Name="IDCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organizatory_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="Organizatory" Type="Self.Organizatory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Organizatory">
+              <PropertyRef Name="IDCountry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gyri_Napravlenie">
+          <End Role="Napravlenie" Type="Self.Napravlenie" Multiplicity="0..1" />
+          <End Role="gyri" Type="Self.gyri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Napravlenie">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="gyri">
+              <PropertyRef Name="IDNapravleniay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Moder_Napravlenie">
+          <End Role="Napravlenie" Type="Self.Napravlenie" Multiplicity="0..1" />
+          <End Role="Moder" Type="Self.Moder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Napravlenie">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Moder">
+              <PropertyRef Name="IDNapravleniya" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IgishevDemo2022Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Activity" EntityType="Self.Activity" />
+          <EntitySet Name="City" EntityType="Self.City" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" />
+          <EntitySet Name="Country" EntityType="Self.Country" />
+          <EntitySet Name="gyri" EntityType="Self.gyri" />
+          <EntitySet Name="Meropriaytie" EntityType="Self.Meropriaytie" />
+          <EntitySet Name="Moder" EntityType="Self.Moder" />
+          <EntitySet Name="Napravlenie" EntityType="Self.Napravlenie" />
+          <EntitySet Name="Organizatory" EntityType="Self.Organizatory" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Activity_Clients" Association="Self.FK_Activity_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Activity" EntitySet="Activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Activity_gyri" Association="Self.FK_Activity_gyri">
+            <End Role="gyri" EntitySet="gyri" />
+            <End Role="Activity" EntitySet="Activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Activity_Meropriaytie" Association="Self.FK_Activity_Meropriaytie">
+            <End Role="Meropriaytie" EntitySet="Meropriaytie" />
+            <End Role="Activity" EntitySet="Activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Activity_Moder" Association="Self.FK_Activity_Moder">
+            <End Role="Moder" EntitySet="Moder" />
+            <End Role="Activity" EntitySet="Activity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Meropriaytie_City" Association="Self.FK_Meropriaytie_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Meropriaytie" EntitySet="Meropriaytie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_Country" Association="Self.FK_Clients_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gyri_Country" Association="Self.FK_gyri_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="gyri" EntitySet="gyri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Moder_Country" Association="Self.FK_Moder_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Moder" EntitySet="Moder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organizatory_Country" Association="Self.FK_Organizatory_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Organizatory" EntitySet="Organizatory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gyri_Napravlenie" Association="Self.FK_gyri_Napravlenie">
+            <End Role="Napravlenie" EntitySet="Napravlenie" />
+            <End Role="gyri" EntitySet="gyri" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Moder_Napravlenie" Association="Self.FK_Moder_Napravlenie">
+            <End Role="Napravlenie" EntitySet="Napravlenie" />
+            <End Role="Moder" EntitySet="Moder" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище IgishevDemo2022ModelContainer" CdmEntityContainer="IgishevDemo2022Entities">
+          <EntitySetMapping Name="Activity">
+            <EntityTypeMapping TypeName="IgishevDemo2022Model.Activity">
+              <MappingFragment StoreEntitySet="Activity">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDMeropriyatia" ColumnName="IDMeropriyatia" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IDModer" ColumnName="IDModer" />
+                <ScalarProperty Name="IDGyri" ColumnName="IDGyri" />
+                <ScalarProperty Name="IDClients" ColumnName="IDClients" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="City">
+            <EntityTypeMapping TypeName="IgishevDemo2022Model.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="IgishevDemo2022Model.Clients">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="IDCountry" ColumnName="IDCountry" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Country">
+            <EntityTypeMapping TypeName="IgishevDemo2022Model.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Name2" ColumnName="Name2" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gyri">
+            <EntityTypeMapping TypeName="IgishevDemo2022Model.gyri">
+              <MappingFragment StoreEntitySet="gyri">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="IDCountry" ColumnName="IDCountry" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="IDNapravleniay" ColumnName="IDNapravleniay" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Meropriaytie">
+            <EntityTypeMapping TypeName="IgishevDemo2022Model.Meropriaytie">
+              <MappingFragment StoreEntitySet="Meropriaytie">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+                <ScalarProperty Name="IDCity" ColumnName="IDCity" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Moder">
+            <EntityTypeMapping TypeName="IgishevDemo2022Model.Moder">
+              <MappingFragment StoreEntitySet="Moder">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="IDCountry" ColumnName="IDCountry" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="IDNapravleniya" ColumnName="IDNapravleniya" />
+                <ScalarProperty Name="Meropriyatie" ColumnName="Meropriyatie" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Napravlenie">
+            <EntityTypeMapping TypeName="IgishevDemo2022Model.Napravlenie">
+              <MappingFragment StoreEntitySet="Napravlenie">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organizatory">
+            <EntityTypeMapping TypeName="IgishevDemo2022Model.Organizatory">
+              <MappingFragment StoreEntitySet="Organizatory">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="IDCountry" ColumnName="IDCountry" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="IgishevDemo2022Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

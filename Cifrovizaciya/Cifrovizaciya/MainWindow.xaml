@@ -1,0 +1,79 @@
+﻿<Window x:Class="Cifrovizaciya.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cifrovizaciya"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Просмотр информации" Height="450" Width="800"
+        Icon="Resources/icon.ico"
+        FontFamily="Comic Sans MS">
+    
+    <Grid Background="#FF99FFFF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ComboBox Name="CmbFiltr"  
+                  HorizontalAlignment="Left"
+                  Width="200"
+                  materialDesign:HintAssist.Hint="Сортировка по дате"
+                  Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                  SelectionChanged="CmbCategory_SelectionChanged"
+                  Margin="15"
+                  VerticalContentAlignment="Center">
+            <ComboBoxItem Content="Нет сортировки"/>
+            <ComboBoxItem Content="По возрастанию"/>
+            <ComboBoxItem Content="По убыванию"/>
+        </ComboBox>
+
+        <Button HorizontalAlignment="Right"
+                Content="Авторизация"
+                Background="#FF0000CC"
+                Margin="15"
+                Name="BtnAuth"
+                Click="BtnAuth_Click"/>
+
+        <ListView x:Name="LViewMer"
+                  Grid.Row="1"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="250"
+                          Height="300">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="{Binding Photo}"
+                               Stretch="UniformToFill"/>
+                        <StackPanel Orientation="Vertical"
+                                    Grid.Row="1">
+                            <TextBlock Grid.Row="1"
+                                   FontSize="18"
+                                   Text="{Binding Name}"
+                                   TextAlignment="Center"
+                                   TextWrapping="Wrap"/>
+                            <TextBlock 
+                                   Grid.Row="1"
+                                   FontSize="14"
+                                   VerticalAlignment="Bottom"
+                                   HorizontalAlignment="Center"
+                                   Margin="0 5"
+                                   Text="{Binding Date, StringFormat=Дата проведения: dd.MM.yyyy}"/>
+                        </StackPanel>
+                        
+                        
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+    </Grid>
+</Window>

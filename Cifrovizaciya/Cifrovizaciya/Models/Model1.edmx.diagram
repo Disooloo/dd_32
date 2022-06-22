@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="08f618f1e3564d5ba20d38f1d0ccc057" Name="Diagram1">
+        <EntityTypeShape EntityType="IgishevDemo2022Model.Activity" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IgishevDemo2022Model.City" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IgishevDemo2022Model.Clients" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IgishevDemo2022Model.Country" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IgishevDemo2022Model.gyri" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="IgishevDemo2022Model.Meropriaytie" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IgishevDemo2022Model.Moder" Width="1.5" PointX="6" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IgishevDemo2022Model.Napravlenie" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IgishevDemo2022Model.Organizatory" Width="1.5" PointX="3" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IgishevDemo2022Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="IgishevDemo2022Model.FK_Activity_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="IgishevDemo2022Model.FK_Activity_gyri" ManuallyRouted="false" />
+        <AssociationConnector Association="IgishevDemo2022Model.FK_Activity_Meropriaytie" ManuallyRouted="false" />
+        <AssociationConnector Association="IgishevDemo2022Model.FK_Activity_Moder" ManuallyRouted="false" />
+        <AssociationConnector Association="IgishevDemo2022Model.FK_Meropriaytie_City" ManuallyRouted="false" />
+        <AssociationConnector Association="IgishevDemo2022Model.FK_Clients_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="IgishevDemo2022Model.FK_gyri_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="IgishevDemo2022Model.FK_Moder_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="IgishevDemo2022Model.FK_Organizatory_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="IgishevDemo2022Model.FK_gyri_Napravlenie" ManuallyRouted="false" />
+        <AssociationConnector Association="IgishevDemo2022Model.FK_Moder_Napravlenie" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

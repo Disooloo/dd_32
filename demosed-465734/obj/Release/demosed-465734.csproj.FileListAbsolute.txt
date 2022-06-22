@@ -1,0 +1,8 @@
+D:\ИСП 11.19.3\demosed-465734\obj\Release\demosed-465734.csprojAssemblyReference.cache
+D:\ИСП 11.19.3\demosed-465734\obj\Release\MainWindow.g.cs
+D:\ИСП 11.19.3\demosed-465734\obj\Release\view\pages\testPage.g.cs
+D:\ИСП 11.19.3\demosed-465734\obj\Release\view\widow\testWindow.g.cs
+D:\ИСП 11.19.3\demosed-465734\obj\Release\App.g.cs
+D:\ИСП 11.19.3\demosed-465734\obj\Release\demosed-465734_Content.g.cs
+D:\ИСП 11.19.3\demosed-465734\obj\Release\demosed-465734_MarkupCompile.cache
+D:\ИСП 11.19.3\demosed-465734\obj\Release\demosed-465734_MarkupCompile.lref
